@@ -6,7 +6,7 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:11:15 by malaakso          #+#    #+#             */
-/*   Updated: 2023/02/12 17:45:19 by malaakso         ###   ########.fr       */
+/*   Updated: 2023/02/12 19:52:34 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ static void	send_char(pid_t pid, char c)
 	{
 		if (c & (1 << i))
 		{
-			usleep (100);
+			usleep (80);
 			kill (pid, SIGUSR2);
 		}
 		else
 		{
-			usleep (100);
+			usleep (50);
 			kill (pid, SIGUSR1);
 		}
 		i++;
