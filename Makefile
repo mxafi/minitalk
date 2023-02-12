@@ -6,7 +6,7 @@
 #    By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/19 13:11:28 by malaakso          #+#    #+#              #
-#    Updated: 2023/02/05 18:12:30 by malaakso         ###   ########.fr        #
+#    Updated: 2023/02/12 20:09:21 by malaakso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ CFLGS = -Wall -Wextra -Werror
 COMPILE = $(CC) $(CFLGS)
 SRCS = client.c server.c
 OBJS = $(SRCS:%.c=%.o)
+
+.PHONY: all
 
 all: $(NAME) $(NAME2)
 
@@ -32,7 +34,7 @@ $(NAME2): client.o libft/libft.a
 libft/libft.a:
 	$(MAKE) -C libft
 
-.PHONY: clean
+.PHONY: clean fclean re
 
 clean:
 	/bin/rm -f $(OBJS)
