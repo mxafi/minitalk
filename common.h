@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.h                                           :+:      :+:    :+:   */
+/*   common.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 18:13:08 by malaakso          #+#    #+#             */
-/*   Updated: 2023/01/30 21:04:35 by malaakso         ###   ########.fr       */
+/*   Created: 2023/02/12 17:21:37 by malaakso          #+#    #+#             */
+/*   Updated: 2023/02/12 17:21:48 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLIENT_H
-# define CLIENT_H
+#ifndef COMMON_H
+# define COMMON_H
 
 # include <unistd.h>
 # include <signal.h>

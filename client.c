@@ -6,11 +6,11 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:11:15 by malaakso          #+#    #+#             */
-/*   Updated: 2023/01/30 21:15:47 by malaakso         ###   ########.fr       */
+/*   Updated: 2023/02/12 17:20:51 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "client.h"
+#include "common.h"
 
 static void	send_char(pid_t pid, char c)
 {
@@ -20,9 +20,15 @@ static void	send_char(pid_t pid, char c)
 	while (i < 8)
 	{
 		if (c & (1 << i))
+		{
+			usleep (100);
 			kill (pid, SIGUSR2);
+		}
 		else
+		{
+			usleep (100);
 			kill (pid, SIGUSR1);
+		}
 		i++;
 	}
 }
@@ -63,8 +69,8 @@ int	main(int ac, char **av)
 		ft_printf("Empty string is not valid.\nUsage: ./client <PID> <string>\n");
 		exit (1);
 	}
-	ft_printf("Client got server PID: %i\nClient got message string: %s\n",
-		server_pid, message_string);
+	ft_printf("Sending message...\n");
 	sender(server_pid, message_string);
+	ft_printf("Message sent.\n");
 	return (0);
 }
